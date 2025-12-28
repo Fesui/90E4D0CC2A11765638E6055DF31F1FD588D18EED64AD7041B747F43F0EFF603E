@@ -1,4 +1,4 @@
-if game.PlaceId ~= 13342303743 or game.PlaceId ~= 7862839080 then warn("승리재단이 아닙니다.") end
+if game.PlaceId ~= 13342303743 and game.PlaceId ~= 7862839080 then warn("승리재단이 아닙니다.") end
 -------------------------==Service==-------------------------
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local Players = game:GetService("Players")
