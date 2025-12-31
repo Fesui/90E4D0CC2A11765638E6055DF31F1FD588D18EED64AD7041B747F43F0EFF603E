@@ -162,6 +162,26 @@ WF:AddButton({
 	end
 })
 
+WF:AddButton({
+    Title = "킬올(몹)",
+    Description = "모든 몹을 죽입니다.",
+    Callback = function()
+        local plrs = {}
+        for _, plr in pairs(game:GetService("Players"):GetPlayers()) do
+            if plr.Character then
+                table.insert(plrs, plr.Character)
+            end
+        end
+
+        for _, obj in pairs(game.Workspace:GetDescendants()) do
+            local hum = obj:FindFirstChildOfClass("Humanoid")
+            if hum and not table.find(plrs, obj) then
+                kill(hum)
+            end
+        end
+    end
+})
+
 WF:AddToggle("클릭 킬", {
 	Title = "클릭 킬",
 	Description = "클릭으로 유저를 죽입니다.",
